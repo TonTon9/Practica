@@ -104,7 +104,7 @@ namespace Practica_2
 
         private void InsertClient_Click(object sender, EventArgs e)
         {
-            string commandLine = $"INSERT INTO [Client] (Name, Surname, Age, Phone) VALUES ('{ClientName.Text}', '{ClientSurname.Text}'), '{ClientAge.Text}', '{ClientPhone.Text}'";
+            string commandLine = $"INSERT INTO [Client] (Name, Surname, Age, Phone) VALUES ('{ClientName.Text}', '{ClientSurname.Text}', '{ClientAge.Text}', '{ClientPhone.Text}')";
             SqlCommand sqlCommand = new SqlCommand(commandLine, sqlConnection);
             string successInsertCount = sqlCommand.ExecuteNonQuery().ToString();
             CheckOnSuccessfulInsert(successInsertCount);
@@ -112,7 +112,7 @@ namespace Practica_2
 
         private void button3_Click(object sender, EventArgs e)
         {
-            string commandLine = $"INSERT INTO [Sponsors] (Name, Attachments, Phone) VALUES ('{PartnerName.Text}', '{PartnerAttach.Text}'), '{PartnerPhone.Text}'";
+            string commandLine = $"INSERT INTO [Sponsors] (Name, Attachments, Phone) VALUES ('{PartnerName.Text}', '{PartnerAttach.Text}', '{PartnerPhone.Text}')";
             SqlCommand sqlCommand = new SqlCommand(commandLine, sqlConnection);
             string successInsertCount = sqlCommand.ExecuteNonQuery().ToString();
             CheckOnSuccessfulInsert(successInsertCount);
@@ -142,6 +142,5 @@ namespace Practica_2
             sqlDataAdapter.Fill(dataSet);
             dataGrid.DataSource = dataSet.Tables[0];
         }
-
     }
 }
